@@ -79,6 +79,12 @@ export PATH=$PATH:$NODE_PATH/bin
 # Install JDK and Apache Ant
 apt-get -qq -y install default-jdk ant
 
+# Set JAVA_HOME based on the default OpenJDK installed
+export JAVA_HOME="$(find /usr -type l -name 'default-java')"
+if [ "$JAVA_HOME" != "" ]; then
+    echo "export JAVA_HOME=$JAVA_HOME" >> ".profile"
+fi
+
 # Install Apache Cordova and Ionic Framework
 npm install -g cordova
 npm install -g ionic
