@@ -21,11 +21,11 @@ NODE_PATH=/opt/node
 # x86_64 or i686
 LINUX_ARCH="$(lscpu | grep 'Architecture' | awk -F\: '{ print $2 }' | tr -d ' ')"
 
-# Latest Android Linux SDK for x64 and x86 as of 09-19-2014
+# Latest Android Linux SDK for x64 and x86 as of 10-19-2014
 ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz"
 ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz"
 
-# Latest NodeJS for x64 and x86 as of 9-19-2014
+# Latest NodeJS for x64 and x86 as of 10-19-2014
 NODE_X64="http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz"
 NODE_X86="http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x86.tar.gz"
 
@@ -88,6 +88,8 @@ fi
 # Install Apache Cordova and Ionic Framework
 npm install -g cordova
 npm install -g ionic
+
+cd "$INSTALL_PATH" && chmod 777 "node" -R
 
 # Clean up any files that were downloaded from the internet
 cd ~/Desktop && rm "android-sdk.tgz"
