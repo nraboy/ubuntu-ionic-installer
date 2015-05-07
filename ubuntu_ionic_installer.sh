@@ -21,13 +21,13 @@ NODE_PATH=/opt/node
 # x86_64 or i686
 LINUX_ARCH="$(lscpu | grep 'Architecture' | awk -F\: '{ print $2 }' | tr -d ' ')"
 
-# Latest Android Linux SDK for x64 and x86 as of 10-19-2014
-ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz"
-ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r23.0.2-linux.tgz"
+# Latest Android Linux SDK for x64 and x86 as of 7-5-2015
+ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r24.2-linux.tgz"
+ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r24.2-linux.tgz"
 
-# Latest NodeJS for x64 and x86 as of 10-19-2014
-NODE_X64="http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz"
-NODE_X86="http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x86.tar.gz"
+# Latest NodeJS for x64 and x86 as of 7-5-2015
+NODE_X64="http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz"
+NODE_X86="http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x86.tar.gz"
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
     # Add i386 architecture
@@ -48,7 +48,7 @@ if [ "$LINUX_ARCH" == "x86_64" ]; then
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v0.10.32-linux-x64" "node"
+    cd "$INSTALL_PATH" && mv "node-v0.12.2-linux-x64" "node"
 
     # Android SDK requires some x86 architecture libraries even on x64 system
     apt-get install -qq -y libc6:i386 libgcc1:i386 libstdc++6:i386 libz1:i386
@@ -62,7 +62,7 @@ else
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v0.10.32-linux-x86" "node"
+    cd "$INSTALL_PATH" && mv "node-v0.12.2-linux-x86" "node"
 
 fi
 
