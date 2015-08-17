@@ -22,12 +22,12 @@ NODE_PATH=/opt/node
 LINUX_ARCH="$(lscpu | grep 'Architecture' | awk -F\: '{ print $2 }' | tr -d ' ')"
 
 # Latest Android Linux SDK for x64 and x86 as of 7-5-2015
-ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r24.2-linux.tgz"
-ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r24.2-linux.tgz"
+ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz"
+ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz"
 
 # Latest NodeJS for x64 and x86 as of 7-5-2015
-NODE_X64="http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x64.tar.gz"
-NODE_X86="http://nodejs.org/dist/v0.12.2/node-v0.12.2-linux-x86.tar.gz"
+NODE_X64="https://nodejs.org/dist/v0.12.7/node-v0.12.7-linux-x64.tar.gz"
+NODE_X86="https://nodejs.org/dist/v0.12.7/node-v0.12.7-linux-x86.tar.gz"
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
     # Add i386 architecture
