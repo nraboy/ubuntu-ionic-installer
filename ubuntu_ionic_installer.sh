@@ -45,9 +45,9 @@ cd ~/Desktop
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
 
-    wget "$NODE_X64" -O "nodejs.tgz"
-    wget "$ANDROID_SDK_X64" -O "android-sdk.tgz"
-    wget "$GRADLE_ALL" -O "gradle.zip"
+    wget "$NODE_X64" -O "nodejs.tgz" --no-check-certificate
+    wget "$ANDROID_SDK_X64" -O "android-sdk.tgz" --no-check-certificate
+    wget "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
@@ -63,9 +63,9 @@ if [ "$LINUX_ARCH" == "x86_64" ]; then
 
 else
 
-    wget "$NODE_X86" -O "nodejs.tgz"
-    wget "$ANDROID_SDK_X86" -O "android-sdk.tgz"
-    wget "$GRADLE_ALL" -O "gradle.zip"
+    wget "$NODE_X86" -O "nodejs.tgz" --no-check-certificate
+    wget "$ANDROID_SDK_X86" -O "android-sdk.tgz" --no-check-certificate
+    wget "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
