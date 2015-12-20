@@ -1,10 +1,10 @@
-[![PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XK2JBEZ2PD2QS)
+[![PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/nraboy)
 [![Square](https://img.shields.io/badge/square-donate-yellow.svg)](https://cash.me/$nraboy)
 
 
 # Ubuntu Ionic Installer
 
-Installs Android, Apache Ant, Gradle, Java JDK, NodeJS, Apache Cordova, and Ionic Framework on Ubuntu x64 and x86 architectures.  Has been tested with Ubuntu 14.04 Trusty Tahr.
+Installs Android, Apache Ant, Gradle, Java JDK, Node.js, Apache Cordova, and Ionic Framework on Ubuntu x64 and x86 architectures.  Has been tested with Ubuntu 14.04 Trusty Tahr.
 
 [http://blog.nraboy.com/2014/09/install-android-cordova-ionic-framework-ubuntu/](http://blog.nraboy.com/2014/09/install-android-cordova-ionic-framework-ubuntu/)
 

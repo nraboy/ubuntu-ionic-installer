@@ -12,6 +12,7 @@
 #   NPM
 #   Apache Cordova
 #   Ionic Framework
+#   Gradle
 
 HOME_PATH=$(cd ~/ && pwd)
 INSTALL_PATH=/opt
@@ -22,16 +23,16 @@ GRADLE_PATH=/opt/gradle
 # x86_64 or i686
 LINUX_ARCH="$(lscpu | grep 'Architecture' | awk -F\: '{ print $2 }' | tr -d ' ')"
 
-# Latest Android Linux SDK for x64 and x86 as of 06-28-2015
-ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz"
-ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz"
+# Latest Android Linux SDK for x64 and x86 as of 12-19-2015
+ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz"
+ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz"
 
-# Latest NodeJS for x64 and x86 as of 06-28-2015
-NODE_X64="http://nodejs.org/dist/v0.12.2/node-v0.12.5-linux-x64.tar.gz"
-NODE_X86="http://nodejs.org/dist/v0.12.2/node-v0.12.5-linux-x86.tar.gz"
+# Latest NodeJS for x64 and x86 as of 12-19-2015
+NODE_X64="https://nodejs.org/download/release/v0.12.9/node-v0.12.9-linux-x64.tar.gz"
+NODE_X86="https://nodejs.org/download/release/v0.12.9/node-v0.12.9-linux-x86.tar.gz"
 
-# Latest Gradle as of 06-28-2015
-GRADLE_ALL="https://services.gradle.org/distributions/gradle-2.4-all.zip"
+# Latest Gradle as of 12-19-2015
+GRADLE_ALL="https://services.gradle.org/distributions/gradle-2.9-all.zip"
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
     # Add i386 architecture
@@ -45,36 +46,36 @@ cd ~/Desktop
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
 
-    wget "$NODE_X64" -O "nodejs.tgz" --no-check-certificate
-    wget "$ANDROID_SDK_X64" -O "android-sdk.tgz" --no-check-certificate
-    wget "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
+    wget -c "$NODE_X64" -O "nodejs.tgz" --no-check-certificate
+    wget -c "$ANDROID_SDK_X64" -O "android-sdk.tgz" --no-check-certificate
+    wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
-    mv "gradle-2.4" "$INSTALL_PATH"
+    mv "gradle-2.9" "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v0.12.5-linux-x64" "node"
-    cd "$INSTALL_PATH" && mv "gradle-2.4" "gradle"
+    cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x64" "node"
+    cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
 
     # Android SDK requires some x86 architecture libraries even on x64 system
     apt-get install -qq -y libc6:i386 libgcc1:i386 libstdc++6:i386 libz1:i386
 
 else
 
-    wget "$NODE_X86" -O "nodejs.tgz" --no-check-certificate
-    wget "$ANDROID_SDK_X86" -O "android-sdk.tgz" --no-check-certificate
-    wget "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
+    wget -c "$NODE_X86" -O "nodejs.tgz" --no-check-certificate
+    wget -c "$ANDROID_SDK_X86" -O "android-sdk.tgz" --no-check-certificate
+    wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
-    mv "gradle-2.4" "$INSTALL_PATH"
+    mv "gradle-2.9" "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v0.12.5-linux-x86" "node"
-    cd "$INSTALL_PATH" && mv "gradle-2.4" "gradle"
+    cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x86" "node"
+    cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
 
 fi
 
