@@ -50,8 +50,8 @@ if [ "$LINUX_ARCH" == "x86_64" ]; then
     wget -c "$ANDROID_SDK_X64" -O "android-sdk.tgz" --no-check-certificate
     wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
-    tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
-    tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
+    tar zxvf "nodejs.tgz" -C "$INSTALL_PATH"
+    tar zxvf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
     mv "gradle-2.9" "$INSTALL_PATH"
 
@@ -68,8 +68,8 @@ else
     wget -c "$ANDROID_SDK_X86" -O "android-sdk.tgz" --no-check-certificate
     wget -c "$GRADLE_ALL" -O "gradle.zip" --no-check-certificate
 
-    tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
-    tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
+    tar zxvf "nodejs.tgz" -C "$INSTALL_PATH"
+    tar zxvf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
     mv "gradle-2.9" "$INSTALL_PATH"
 
