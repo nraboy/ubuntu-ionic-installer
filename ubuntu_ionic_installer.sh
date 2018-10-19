@@ -28,11 +28,11 @@ ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz"
 ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz"
 
 # Latest NodeJS for x64 and x86 as of 12-19-2015
-NODE_X64="https://nodejs.org/dist/v5.1.1/node-v5.1.1-linux-x64.tar.gz"
-NODE_X86="https://nodejs.org/dist/v5.1.1/node-v5.1.1-linux-x86.tar.gz"
+NODE_X64="https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-x64.tar.xz"
+NODE_X86="https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-x86.tar.xz"
 
-# Latest Gradle as of 12-19-2015
-GRADLE_ALL="https://services.gradle.org/distributions/gradle-2.9-all.zip"
+# Latest Gradle as of 10-19-2018
+GRADLE_ALL="https://services.gradle.org/distributions/gradle-4.10.2-all.zip"
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
     # Add i386 architecture
@@ -53,11 +53,11 @@ if [ "$LINUX_ARCH" == "x86_64" ]; then
     tar zxvf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxvf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
-    mv "gradle-2.9" "$INSTALL_PATH"
+    mv "gradle-4.10.2-all" "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v5.1.1-linux-x64" "node"
-    cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
+    cd "$INSTALL_PATH" && mv "node-v8.12.0-linux-x64" "node"
+    cd "$INSTALL_PATH" && mv "gradle-4.10.2-all" "gradle"
 
     # Android SDK requires some x86 architecture libraries even on x64 system
     apt-get install -qq -y libc6:i386 libgcc1:i386 libstdc++6:i386 libz1:i386
@@ -71,11 +71,11 @@ else
     tar zxvf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxvf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
-    mv "gradle-2.9" "$INSTALL_PATH"
+    mv "gradle-4.10.2-all" "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v5.1.1-linux-x86" "node"
-    cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
+    cd "$INSTALL_PATH" && mv "node-v8.12.0-linux-x86" "node"
+    cd "$INSTALL_PATH" && mv "gradle-4.10.2-all" "gradle"
 
 fi
 
